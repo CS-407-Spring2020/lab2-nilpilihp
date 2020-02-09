@@ -2,6 +2,7 @@ package com.example.lab2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,9 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   public void goToActivity2()
+   public void goToActivity2(String s)
     {
-
+        Intent intent = new Intent(this, Main2Activity.class);
+        // putExtra() function helps us pass data to the second activity
+        intent.putExtra("message",s);
+        startActivity(intent);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
